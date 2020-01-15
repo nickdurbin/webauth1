@@ -19,7 +19,7 @@ router.post("/login", async (req, res, next) => {
     const user = await Users.findBy({ username }).first()
     const passwordValid = await bcrypt.compare(password, user.password)
 
-    if (user && passwordValid === user.password) {
+    if (user && passwordValid) {
       res.status(200).json({
         message: `Welcome ${user.username}!`,
       })
