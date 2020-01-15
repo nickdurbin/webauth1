@@ -1,9 +1,7 @@
-const loginRouter = require('./login/login-routes')
-const registerRouter = require('./register/register-routes')
+const authRouter = require('./auth/auth-routes')
 const userRouter = require('./users/user-routes')
 
 module.exports = server => {
-  server.use('/api/login', loginRouter)
-  server.use('/api/register', registerRouter)
+  server.use('/api/auth', authRouter)
   server.use('/api/users', userRouter)
 }
